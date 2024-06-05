@@ -12,7 +12,7 @@ class TestArithmeticArranger(unittest.TestCase):
         
         problems = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
         result = arithmetic_arranger(problems)
-        expected = "   32         1      9999      523\n+  8    - 3801    + 9999    -  49\n----    ------    ------    -----"
+        expected = "   32         1      9999      523\n+   8    - 3801    + 9999    -  49\n ----    ------    ------    -----"
         self.assertEqual(result, expected)
         
     def test_too_many_problems(self):
@@ -46,6 +46,17 @@ class TestArithmeticArranger(unittest.TestCase):
         problems = ["1234 + 56789", "1 + 1"]
         result = arithmetic_arranger(problems)
         self.assertEqual(result, "Error: Numbers cannot be more than four digits.")
+    
+    def test_with_answers(self):
+        problems = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
+        result = arithmetic_arranger(problems, True)
+        expected = "   32      3801      45      123\n+ 698    -    2    + 43    +  49\n-----    ------    ----    -----\n  730      3799      88      172"
+        self.assertEqual(result, expected)
+        
+        problems = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
+        result = arithmetic_arranger(problems, True)
+        expected = "   32         1      9999      523\n+   8    - 3801    + 9999    -  49\n ----    ------    ------    -----\n   40     -3800     19998      474"
+        self.assertEqual(result, expected)
 
 if __name__ == '__main__':
     unittest.main()
