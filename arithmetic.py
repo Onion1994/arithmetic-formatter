@@ -8,4 +8,6 @@ def arithmetic_arranger(problems, show_answers=False):
             return "Error: Operator must be '+' or '-'."
         if not first_operand.isdigit() or not second_operand.isdigit():
             return "Error: Numbers must only contain digits."
+        if len(first_operand) > 4 or len(second_operand) > 4:
+            return "Error: Numbers cannot be more than four digits."
     return problems
