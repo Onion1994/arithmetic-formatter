@@ -1,5 +1,6 @@
 def arithmetic_arranger(problems, show_answers=False):
-    
+    for problem in problems:
+        problem_array = problem.split(" ")
+        if problem_array[1] not in ["+", "-"]:
+            return "Error: Operator must be '+' or '-'."
     return problems
-
-print("   32         1      9999      523\n+   8    - 3801    + 9999    -  49\n ----    ------    ------    -----\n   40     -3800     19998      474")
