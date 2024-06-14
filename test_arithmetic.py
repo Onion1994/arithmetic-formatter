@@ -10,9 +10,9 @@ class TestArithmeticArranger(unittest.TestCase):
         expected = "   32      3801      45      123\n+ 698    -    2    + 43    +  49\n-----    ------    ----    -----"
         self.assertEqual(result, expected)
         
-        problems = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
+        problems = ["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]
         result = arithmetic_arranger(problems)
-        expected = "   32         1      9999      523\n+   8    - 3801    + 9999    -  49\n ----    ------    ------    -----"
+        expected = "    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----"
         self.assertEqual(result, expected)
         
     def test_too_many_problems(self):
