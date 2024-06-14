@@ -48,14 +48,14 @@ class TestArithmeticArranger(unittest.TestCase):
         self.assertEqual(result, "Error: Numbers cannot be more than four digits.")
     
     def test_with_answers(self):
-        problems = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
+        problems = ["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"]
         result = arithmetic_arranger(problems, True)
-        expected = "   32      3801      45      123\n+ 698    -    2    + 43    +  49\n-----    ------    ----    -----\n  730      3799      88      172"
+        expected = "   32         1      45      123      988\n- 698    - 3801    + 43    +  49    +  40\n-----    ------    ----    -----    -----\n -666     -3800      88      172     1028"
         self.assertEqual(result, expected)
         
-        problems = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
+        problems = ["3 + 855", "988 + 40"]
         result = arithmetic_arranger(problems, True)
-        expected = "   32         1      9999      523\n+   8    - 3801    + 9999    -  49\n ----    ------    ------    -----\n   40     -3800     19998      474"
+        expected = "    3      988\n+ 855    +  40\n-----    -----\n  858     1028"
         self.assertEqual(result, expected)
 
 if __name__ == '__main__':
